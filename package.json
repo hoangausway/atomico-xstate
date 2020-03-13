@@ -1,0 +1,19 @@
+{
+  "name": "atomico-xstate-reddit",
+  "description": "Try XState with Atomico",
+  "version": "1.0.0",
+  "source": "index.html",
+  "scripts": {
+    "build": "bundle index.html dist",
+    "build:web-components": "bundle src/components/*-*.js web-components --external",
+    "dev": "bundle index.html dist --watch --server",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "atomico": "^0.19.0",
+    "xstate": "^4.8.0"
+  },
+  "devDependencies": {
+    "bundle-cli": "^0.19.1"
+  }
+}
