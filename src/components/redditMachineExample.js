@@ -5,11 +5,12 @@ import { Machine, assign } from 'xstate'
   - If done, enter state 'loaded' and assign 'event.data' to 'posts' context variable
   - If error, simply enter state 'failed'. Process error further is out of scope of this demo.
 */
+const url = subreddit => `https://www.reddit.com/r/${subreddit}.json`
 const invoke = {
   id: 'fetch-subreddit',
   // Fetch subreddit once entered 'loadding' state
   src: context =>
-    fetch(`https://www.reddit.com/r/${context.subreddit}.json`)
+    fetch(url(context.subreddit))
       .then(response => response.json())
       .then(json => json.data.children.map(child => child.data)),
   onDone: {

@@ -3,21 +3,22 @@ import { useMachine } from './useMachine'
 import { redditMachineExample } from './redditMachineExample'
 
 // Sample array of subreddits to serach
-const subreddits = ['frontend', 'reactjs', 'vuejs']
+const subreddits = ['frontend', 'reactjs', 'rxjs', 'xstate', 'atomico']
 
 // Machine instance with internal state
 const XStateReddit = props => {
   const [current, send] = useMachine(redditMachineExample)
   const { subreddit, posts } = current.context
+  const changeHandler = e =>
+    e.target.value && send('SELECT', { name: e.target.value })
+
   return (
     <host shadowDom>
       <style>{style()}</style>
       <main>
         <header>
-          <select
-            onchange={e =>
-              e.target.value && send('SELECT', { name: e.target.value })}
-          >
+          <h1 className='xstate'>Atomico + XState</h1>
+          <select onchange={changeHandler}>
             <option key='select' value=''>
               --Select--
             </option>
@@ -60,5 +61,8 @@ const style = () => `
 }
 main {
   margin: 9px;
+}
+h1.xstate {
+  color: green;
 }
 `

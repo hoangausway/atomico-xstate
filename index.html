@@ -13,10 +13,19 @@
         padding: 0px;
         margin: 0px;
       }
+      .layout {
+        display: grid;
+        width: 100%;
+        padding: 6px;
+        grid-template-columns: 1fr 1fr;
+      }
     </style>
   </head>
   <body>
-    <xstate-reddit></xstate-reddit>
+    <div class="layout">
+      <xstate-reddit></xstate-reddit>
+      <rxjs-reddit></rxjs-reddit>
+    </div>
     <script type="module" src="src/index.js"></script>
 
     <!--Delete comment to activate PWA
