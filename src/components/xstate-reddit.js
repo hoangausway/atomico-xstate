@@ -33,7 +33,7 @@ const XStateReddit = props => {
         </header>
         <section>
           <h1>{current.matches('idle') ? 'Select a subreddit' : subreddit}</h1>
-          {current.matches({ selected: 'loading' }) && <div>Loading...</div>}
+          {current.matches({ selected: 'loading' }) && <div>Loading {subreddit} ...</div>}
           {current.matches({ selected: 'failed' }) && (
             <div>Couldn't load the subreddit '{subreddit}'</div>
           )}

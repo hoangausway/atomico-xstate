@@ -1,11 +1,11 @@
 import { h, customElement, useState, useEffect } from 'atomico'
-import { state$ } from './redditStreamExample'
+import { useStateStream } from './redditStreamExample'
 
 // Sample array of subreddits to serach
 const subreddits = ['frontend', 'reactjs', 'rxjs', 'xstate', 'atomico']
 
 const RxJSReddit = props => {
-  const [state, setState] = useState(['idle'])
+  const [state, { selectEmit }, startWith] = useStateStream(['idle'])
   const [stateName, stateData] = state
 
   const [subreddit, setSubreddit] = useState('')
@@ -18,17 +18,10 @@ const RxJSReddit = props => {
   }
 
   useEffect(() => {
-    const sub = state$.subscribe(setState)
     if (subreddit) {
-      /*
-        With RxJS I don't know other simple way to make state through 'loading' state.
-        With XState it was part of states description
-      */
-      setState(['loading', subreddit])
-      
-      state$.next(['loading', subreddit])
+      startWith(['loading', subreddit])
+      selectEmit(subreddit)
     }
-    return () => sub.unsubscribe()
   }, [subreddit])
 
   return (
