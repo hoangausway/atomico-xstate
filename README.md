@@ -12,4 +12,4 @@ Sample subreddits are an array of
 
 While subreddits `frontend`, `reactjs`, `rxjs` are ok, the `xstate` return empty set, and `atomico` failed.
 
-**Notes:** It was used minmal CSS styling to point out the codes' logics.
+**Notes:** It was used minmal CSS styling to focus on the codes' logics.
