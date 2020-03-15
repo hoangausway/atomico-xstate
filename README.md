@@ -1,11 +1,11 @@
 # atomico-xstate
 Trying **XState** with **Atomico**
 
-Please refer to tutorial in XState docs: https://xstate.js.org/docs/tutorials/reddit.html which explains how to use XState to manage states in React.
+Please refer to the tutorial in **XState** docs: https://xstate.js.org/docs/tutorials/reddit.html which explains how to use XState to manage states in React.
 
-Here we try to use XState for state management with Atomico as a web component library.
+Here we try to use **XState** for state management with Atomico as a web component library.
 
-Trying also to implement the same logics with **RxJS**.
+Also provided the same logics with **RxJS**.
 
 Sample subreddits are an array of
 `frontend`, `reactjs`, `rxjs`, `xstate`, `atomico`.
