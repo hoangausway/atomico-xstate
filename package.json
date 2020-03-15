@@ -1,6 +1,6 @@
 {
   "name": "atomico-xstate-reddit",
-  "description": "Try XState with Atomico",
+  "description": "State management with XState and RxJS in Atomico",
   "version": "1.0.0",
   "source": "index.html",
   "scripts": {
