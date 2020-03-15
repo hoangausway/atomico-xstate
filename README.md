@@ -9,4 +9,4 @@ Also provided the same logics with **RxJS**.
 
 Sample subreddits are an array of `frontend`, `reactjs`, `rxjs`.
 
-**Notes:** It was used minmal CSS styling to focus on the codes' logics.
+**Notes:** It was used minimal CSS styling to focus on the codes' logics.
