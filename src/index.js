@@ -1,2 +1,2 @@
-import './components/xstate-reddit'
-import './components/rxjs-reddit'
+import './components/xstate-reddit/xstate-reddit'
+import './components/rxjs-reddit/rxjs-reddit'

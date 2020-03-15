@@ -5,7 +5,7 @@
   "source": "index.html",
   "scripts": {
     "build": "bundle index.html dist",
-    "build:web-components": "bundle src/components/*-*.js web-components --external",
+    "build:web-components": "bundle src/components/*-*/*-*.js web-components --external",
     "dev": "bundle index.html dist --watch --server",
     "prepare": "npm run build"
   },
