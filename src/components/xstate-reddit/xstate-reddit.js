@@ -3,7 +3,7 @@ import { useMachine } from './useMachine'
 import { redditMachineExample } from './redditMachineExample'
 
 // Sample array of subreddits to serach
-const subreddits = ['frontend', 'reactjs', 'rxjs', 'xstate', 'atomico']
+const subreddits = ['frontend', 'reactjs', 'rxjs']
 
 // Machine instance with internal state
 const XStateReddit = props => {

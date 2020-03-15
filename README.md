@@ -7,9 +7,6 @@ Here we try to use **XState** for state management with Atomico as a web compone
 
 Also provided the same logics with **RxJS**.
 
-Sample subreddits are an array of
-`frontend`, `reactjs`, `rxjs`, `xstate`, `atomico`.
-
-While subreddits `frontend`, `reactjs`, `rxjs` are ok, the `xstate` return empty set, and `atomico` failed.
+Sample subreddits are an array of `frontend`, `reactjs`, `rxjs`.
 
 **Notes:** It was used minmal CSS styling to focus on the codes' logics.

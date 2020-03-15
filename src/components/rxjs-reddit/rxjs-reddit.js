@@ -2,7 +2,7 @@ import { h, customElement, useState, useEffect } from 'atomico'
 import { useStateStream } from './redditStreamExample'
 
 // Sample array of subreddits to serach
-const subreddits = ['frontend', 'reactjs', 'rxjs', 'xstate', 'atomico']
+const subreddits = ['frontend', 'reactjs', 'rxjs']
 
 const RxJSReddit = props => {
   const [state, { selectEmit }, startWith] = useStateStream(['idle'])
