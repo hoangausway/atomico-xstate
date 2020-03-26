@@ -15,6 +15,6 @@
     "rxjs": "^6.5.3"
   },
   "devDependencies": {
-    "bundle-cli": "^0.19.1"
+    "bundle-cli": "^0.21.2"
   }
 }

@@ -1,7 +1,7 @@
 import { Machine, assign } from 'xstate'
 
 /* Object 'invoke':
-  - Function at 'src' will be called and return promise
+  - Function at 'src' will be invoked and return promise
   - If done, enter state 'loaded' and assign 'event.data' to 'posts' context variable
   - If error, simply enter state 'failed'. Process error further is out of scope of this demo.
 */
@@ -44,7 +44,7 @@ const machineConfig = {
   },
   states: {
     idle: {},
-    // Compound state: has 3 sub-states as 'loading', 'loaded' and 'failed'
+    // Compound state has 3 substates as 'loading', 'loaded' and 'failed'
     selected: {
       initial: 'loading',
       states: {
