@@ -15,6 +15,6 @@ const state$ = select$.pipe(
   catchError(err => err$(err.message))
 )
 
-// export a function with following signature:
+// exports a function with following signature:
 // useStateStream:: initialState -> [state, emitters, startWith]
 export const useStateStream = stateStreamFn(state$, { selectEmit })
