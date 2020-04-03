@@ -1,28 +1,16 @@
-import { h, customElement, useState, useEffect } from 'atomico'
-import { useStateStream } from './redditStreamExample'
+import { h, customElement } from 'atomico'
+import StreamsEmitters from './streams-emitters'
+import { useState$ } from './util-usestate$'
 
 // Sample array of subreddits to serach
 const subreddits = ['frontend', 'reactjs', 'rxjs']
 
 const RxJSReddit = props => {
-  const [state, { selectEmit }, startWith] = useStateStream(['idle'])
-  const [stateName, stateData] = state
+  const [state$, selectEmit] = StreamsEmitters
+  const state = useState$(state$, ['idle'])
+  const [name, subreddit, payload] = state
 
-  const [subreddit, setSubreddit] = useState('')
-  const [title, setTitle] = useState('-- Select --')
-
-  const changeHandler = e => {
-    const sel = e.target
-    setTitle(sel.options[sel.selectedIndex].text)
-    setSubreddit(sel.value)
-  }
-
-  useEffect(() => {
-    if (subreddit) {
-      startWith(['loading', subreddit])
-      selectEmit(subreddit)
-    }
-  }, [subreddit])
+  const changeHandler = e => e.target.value && selectEmit(e.target.value)
 
   return (
     <host shadowDom>
@@ -32,7 +20,7 @@ const RxJSReddit = props => {
           <h1 className='rxjs'>Atomico + RxJS</h1>
           <select onchange={changeHandler}>
             <option key='select' value=''>
-              {title}
+              -- Select --
             </option>
             {subreddits.map(subreddit => (
               <option value={subreddit} key={subreddit}>
@@ -42,13 +30,13 @@ const RxJSReddit = props => {
           </select>
         </header>
         <section>
-          <h1>{stateName === 'idle' ? 'Select a subreddit' : title}</h1>
+          <h1>{name === 'idle' ? 'Select a subreddit' : subreddit}</h1>
           <div>
-            {stateName === 'loading' && <div>Loading {stateData} ...</div>}
-            {stateName === 'failed' && <div>{stateData}</div>}
-            {stateName === 'loaded' && (
+            {name === 'loading' && <div>Loading {payload} ...</div>}
+            {name === 'failed' && <div>{payload}</div>}
+            {name === 'loaded' && (
               <ul>
-                {stateData
+                {payload
                   .map(child => child.data)
                   .map(post => (
                     <li key={post.title}>{post.title}</li>
